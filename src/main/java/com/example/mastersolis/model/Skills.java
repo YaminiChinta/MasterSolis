@@ -10,14 +10,10 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Internships {
+public class Skills {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    private String internship_name;
-    private Integer participants;
-    private String about;
-    private String price;
+    public Integer id;
+    private String skill_name;
 }

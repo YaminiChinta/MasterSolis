@@ -10,14 +10,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Internships {
+public class CourseInternInstructorList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String internship_name;
-    private Integer participants;
-    private String about;
-    private String price;
+    private Integer course_id;
+    private Integer internship_id;
+    private Integer instructor_id;
 }

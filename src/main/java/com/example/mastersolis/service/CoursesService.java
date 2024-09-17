@@ -1,7 +1,9 @@
 package com.example.mastersolis.service;
 
+import com.example.mastersolis.dao.CourseInternInstructorListDao;
 import com.example.mastersolis.dao.CoursesDao;
 import com.example.mastersolis.dao.InstructorDao;
+import com.example.mastersolis.model.CourseInternInstructorList;
 import com.example.mastersolis.model.Courses;
 import com.example.mastersolis.model.Instructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +21,18 @@ public class CoursesService {
     CoursesDao coursesDao;
 
     @Autowired
+    CourseInternInstructorListDao courseInternInstructorListDao;
+
+    @Autowired
     InstructorDao instructorDao;
 
     public ResponseEntity<String> addCourse(Courses course) {
-        List<Instructor> instructorList=instructorDao.getInstructorByRandom();
         try {
-            course.setInstructorList(instructorList);
             coursesDao.save(course);
         }
         catch (Exception e){
             e.printStackTrace();
+            return new ResponseEntity<>("Error while saving the data", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>("Added Course Details Successfully", HttpStatus.CREATED);
     }
@@ -51,5 +55,16 @@ public class CoursesService {
             e.printStackTrace();
         }
         return new ResponseEntity<>(coursesList, HttpStatus.OK);
+    }
+
+    public ResponseEntity<String> addInstructorToCourse(CourseInternInstructorList courseInternInstructorList) {
+        try{
+            courseInternInstructorList.setInternship_id(null);
+            courseInternInstructorListDao.save(courseInternInstructorList);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>("Error in saving the data", HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>("Added the details Successfully", HttpStatus.CREATED);
     }
 }

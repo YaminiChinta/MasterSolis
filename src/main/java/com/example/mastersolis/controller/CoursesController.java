@@ -1,5 +1,6 @@
 package com.example.mastersolis.controller;
 
+import com.example.mastersolis.model.CourseInternInstructorList;
 import com.example.mastersolis.model.Courses;
 import com.example.mastersolis.service.CoursesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,10 @@ public class CoursesController {
     @GetMapping("/getAllCourses")
     public ResponseEntity<List<Courses>> gelAllCourses(){
         return coursesService.getAllCourses();
+    }
+
+    @PostMapping("/addInstructorToCourse")
+    public ResponseEntity<String> addInstructorToCourse(@RequestBody CourseInternInstructorList courseInternInstructorList){
+        return coursesService.addInstructorToCourse(courseInternInstructorList);
     }
 }

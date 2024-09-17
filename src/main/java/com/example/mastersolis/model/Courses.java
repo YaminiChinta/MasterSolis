@@ -23,6 +23,4 @@ public class Courses {
 
     @Column(length = 40000)
     private String about;
-    @OneToMany
-    private List<Instructor> instructorList;
 }
