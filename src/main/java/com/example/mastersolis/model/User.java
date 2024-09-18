@@ -4,24 +4,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.Date;
+import lombok.Data;
 
 @Entity
-@Getter
-@Setter
-public class Internships {
+@Data
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String internship_name;
-    private Integer participants;
-    private Date start_date;
-    private Date end_date;
-    private String about;
-    private String price;
+    private String first_name;
+    private String last_name;
+    private String email;
+    private String phonenumber;
+    private String password;
+    private String cpassword;
 }
