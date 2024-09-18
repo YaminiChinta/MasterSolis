@@ -1,11 +1,13 @@
-package com.example.mastersolis.Utils;
+package com.example.mastersolis.service;
 
 import com.example.mastersolis.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
 
-public class UserUtils {
+@Service
+public class UserUtilsService {
 
     @Autowired
     UserDao userDao;
@@ -30,7 +32,7 @@ public class UserUtils {
         return patternMatches(mobileNumber, regexPattern);
     }
 
-    public static boolean patternMatches(String input, String regexPattern) {
+    public boolean patternMatches(String input, String regexPattern) {
         return Pattern.compile(regexPattern).matcher(input).matches();
     }
 
