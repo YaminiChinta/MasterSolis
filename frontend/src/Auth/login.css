@@ -1,0 +1,49 @@
+.mainContainer{
+    margin: 7% 30%;
+    padding: 2%;
+    max-width: 40%;
+    background-color: rgb(207, 210, 210);
+}
+
+.textField{
+    font-size: small;
+    margin-top: -2%;
+    margin-bottom: 5%;
+}
+
+.labelStyle{
+    margin-left: -12%;
+}
+
+.labelStyle1{
+    margin-left: -35%;
+}
+
+.emailtextField{
+    width:50%;
+    margin-top: 8px;
+    height:30px;
+    margin-bottom: 10px;
+}
+
+.passwordField{
+    width:50%;
+    height:30px;
+    margin-top: 8px;
+}
+
+.forgotPassText{
+    font-size: small;
+    margin-left: -30%;
+}
+
+.buttonStyle{
+    width:30%;
+    height: 30px;
+    margin-top: 5%;
+}
+
+.accountStyle{
+    font-size: small;
+    margin-top: 5%;
+}

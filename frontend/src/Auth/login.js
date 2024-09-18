@@ -1,24 +1,26 @@
 import React, { useState } from "react";
+import "./login.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return(
-    <div>
+    <div className="col-md-12 mainContainer">
+        <div>
+            <h1>Login</h1>
+            <p className="textField">please login to continue</p>
+        </div>
         <form>
             <div className="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                {/* <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                <label for="inputEmailorPhnNum" className="labelStyle">Email or Phone Number : </label><br></br>
+                <input type="email" className="form-control emailtextField" id="inputEmailorPhnNum" placeholder="Enter email"/>
             </div>
             <div className="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                <label for="exampleInputPassword" className="labelStyle1">Password : </label><br></br>
+                <input type="password" className="form-control passwordField" id="exampleInputPassword1" placeholder="Password"/><br></br>
+                <Link className="forgotPassText">Forgot Password? </Link>
             </div>
-            <div className="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                <label className="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <link rel="submit" href="Home.js"/>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <p className="accountStyle">Dont have account <Link>Signup</Link></p>
+            <button type="submit" className="btn btn-primary buttonStyle">Log In</button>
         </form>
     </div>
     );
