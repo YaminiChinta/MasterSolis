@@ -3,6 +3,9 @@ import Login from './Auth/login';
 import Signup from "./Auth/Register";
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import Home from './Common/Home';
+import Courses from './Components/Courses';
+import Internships from './Components/Internships';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -20,6 +23,14 @@ function App() {
         <Route
         path="/home"
         element={<Home/>}
+        />
+        <Route
+        path="/Courses"
+        element={<Courses/>}
+        />
+        <Route
+        path="/Internships"
+        element={<Internships/>}
         />
       </Routes>
       </BrowserRouter>
